@@ -1,0 +1,11 @@
+A session creates a file in a temporary directory on the server where registered session variables and their values are stored.
+This data will be available to all pages on the site during that visit.
+
+The location of the temporary file is determined by a setting in the php.ini file called session.save_path.
+Before using any session variable make sure you have setup this path.
+
+When a session is started following things happen −
+
+           PHP first creates a unique identifier for that particular session which is a random string of 32 hexadecimal numbers such as 3c7foj34c3jj973hjkop2fc937e3443.
+           A cookie called PHPSESSID is automatically sent to the user's computer to store unique session identification string.
+           A file is automatically created on the server in the designated temporary directory and bears the name of the unique identifier prefixed by sess_ ie sess_3c7foj34c3jj973hjkop2fc937e3443.
