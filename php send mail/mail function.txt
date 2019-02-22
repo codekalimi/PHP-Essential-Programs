@@ -1,0 +1,41 @@
+PHP must be configured correctly in the php.ini file with the details of how your system sends email.
+Open php.ini file  and find the section headed [mail function].
+
+Windows users should ensure that two directives are supplied.
+The first is called SMTP that defines your email server address.
+The second is called sendmail_from which defines your own email address.
+
+Linux users simply need to let PHP know the location of their sendmail application.
+The path and any desired switches should be specified to the sendmail_path directive.
+
+PHP makes use of mail() function to send an email.
+This function requires three mandatory arguments that specify the recipient's email address,
+the subject of the the message and the actual message additionally there are other two optional parameters.
+
+             mail(to,subject,message,headers,parameters);
+
+   Parameters	                              Description
+
+  to-Required              Specifies the receiver / receivers of the email
+ subject-Required          Specifies the subject of the email. Note: This parameter cannot contain any newline characters
+ message-Required          Defines the message to be sent. Each line should be separated with a LF (\n).
+                           Lines should not exceed 70 characters.
+                          Windows note: If a full stop is found on the beginning of a line in the message,
+						  it might be removed. To solve this problem, replace the full stop with a double dot:
+                         <?php
+                         $txt = str_replace("\n.", "\n..", $txt);
+                         ?>
+
+ headers-Optional         Specifies additional headers, like From, Cc, and Bcc.
+                          The additional headers should be separated with a CRLF (\r\n).
+                          Note: When sending an email, it must contain a From header.
+						  This can be set with this parameter or in the php.ini file.
+
+  parameters-Optional     Specifies an additional parameter to the sendmail program (the one defined in the sendmail_path
+                          configuration setting). (i.e. this can be used to set the envelope sender address when using
+   						  sendmail with the -f sendmail option)
+
+
+   	For additional
+   	    https://www.tutorialspoint.com/php/php_sending_emails.htm
+   	    http://php.net/manual/en/function.mail.php

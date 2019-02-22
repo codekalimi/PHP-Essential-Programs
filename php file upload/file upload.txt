@@ -1,0 +1,9 @@
+Uploading Files in PHP
+
+    https://www.w3schools.com/php7/php7_file_upload.asp
+	
+	https://www.tutorialspoint.com/php/php_file_uploading.htm
+	
+	https://code.tutsplus.com/tutorials/how-to-upload-a-file-in-php-with-example--cms-31763
+	
+	http://php.net/manual/en/features.file-upload.php
